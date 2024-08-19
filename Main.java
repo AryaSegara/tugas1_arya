@@ -42,6 +42,7 @@ public class Main{
             }
         }while(pilihan != 6);
 
+
         // inputanInteger.close();
     }
 
@@ -142,7 +143,7 @@ public class Main{
         }else{
             for(int i = 0; i < nilaiMahasiswa.size(); i++){
                 System.out.println("Nama : " + namaMahasiswa.get(i));
-                System.out.println("Nilai : " + nilaiMahasiswa.get(i));
+                System.out.println("Nilai : " + nilaiMahasiswa.get(i) + " (Grade : " + hitungGrade(nilaiMahasiswa.get(i)) + ")");
                 System.out.println();
             }
 
@@ -158,12 +159,20 @@ public class Main{
 
         for(int i = 0; i < namaMahasiswa.size(); i++){
             if(namaMahasiswa.get(i).equalsIgnoreCase(nama)){
-                System.out.println("Nama Mahasiswa : " + namaMahasiswa.get(i));
-                System.out.println("Nilai Mahasiswa : " + nilaiMahasiswa.get(i));
+                System.out.println("Nama : " + namaMahasiswa.get(i));
+                System.out.println("Nilai : " + nilaiMahasiswa.get(i) + " (Grade : " + hitungGrade(nilaiMahasiswa.get(i)) + ")");
             }
         }
 
         // inputanString.close();
+    }
+
+    public static String hitungGrade(Integer nilai){
+        if(nilai >= 80 && nilai <= 100) return "A";
+        else if (nilai >= 70 && nilai <= 79) return "B";
+        else if (nilai >= 60 && nilai <= 69) return "C";
+        else if (nilai >= 50 && nilai <= 59) return "D";
+        else return "E";
     }
         
 }
